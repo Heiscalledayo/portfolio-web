@@ -1,5 +1,5 @@
 import React from 'react'
-import projectPicture from '../assets/Portfolio.PNG';
+import projectPicture from '../assets/Portfolio.jpg';
 
 const Projects: React.FC = () => {
   return (
