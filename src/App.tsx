@@ -6,7 +6,7 @@ import WhoAmI from "./components/WhoAmI";
 
 function App() {
   return (
-    <div className="bg-black h-full">
+    <div className="bg-white text-black h-full">
       <Navbar/>
       <About/>
       <WhoAmI/>

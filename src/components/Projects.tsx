@@ -1,88 +1,53 @@
-import React from 'react'
-import projectPicture from '../assets/Portfolio.jpg';
+import React from 'react';
+import ProjectCard from './ProjectCard';
+import image_1 from '../assets/Snapchat-55408010.jpg';
 
 const Projects: React.FC = () => {
+  const projects = [
+    {
+      title: 'Quiz App',
+      description: 'Create, share, and take quizzes with live scoring.',
+      fullDescription:
+        'A responsive quiz web app where users can sign up, create quizzes, take them, and see instant results. Built using React for the frontend and Firebase for the backend with real-time scoring, authentication, and dynamic routing.',
+      image: image_1,
+      link: 'https://quizapp.example.com',
+      tech: ['React', 'Firebase', 'Tailwind'],
+    },
+    {
+      title: 'E-commerce Admin Dashboard',
+      description: 'Manage products, users, and orders with ease.',
+      fullDescription:
+        'An admin dashboard for an e-commerce platform. Features include product CRUD operations, user management, order tracking, and analytics charting. Built with React, Node.js, MongoDB, and Tailwind.',
+      image: image_1,
+      link: 'https://ecomadmin.example.com',
+      tech: ['React', 'Node.js', 'MongoDB'],
+    },
+    {
+      title: 'Blogging Platform',
+      description: 'Write, edit, and publish blogs with rich text.',
+      fullDescription:
+        'A fullstack blogging platform allowing users to sign up, write blog posts using a rich-text editor, view others’ content, and comment. Built with Next.js, Sanity CMS, and Tailwind CSS.',
+      image: image_1,
+      link: 'https://blogsite.example.com',
+      tech: ['Next.js', 'Sanity', 'Tailwind'],
+    },
+  ];
+
   return (
-    <div className='mt-5 bg-black text-white p-2'>
-      <div>
-        <h1 className='text-2xl text-center border-b-gray-500 border-b-4 m-7 mx-20 p-1 md:mx-70' style={{fontFamily: 'Inconsolata', fontWeight: 'bold'}}>Projects</h1>
-        <div className='grid gap-8'>
-          <div className='p-2 rounded m-2 grid gap-5 md:flex md:m-7'>
-            <div className='grid gap-2'>
-              <h2 className='text-[20px] font-semibold' style={{fontFamily: 'Dm sans'}}>1. Jambify</h2>
-              <div style={{fontFamily: 'Inconsolata'}} className='tracking-tight leading-tight text-gray-400 text-[15px] max-w-prose border-2 border-blue-700 p-2 my-2 rounded'>Lorem, ipsum dolor sit amet 
-                consectetur adipisicing elit. 
-                Numquam minima vel tempora et sed? 
-                Temporibus libero quod dicta non ratione.
-              </div>
-              <div className='flex gap-2 mt-5 text-center'>
-                <h1 style={{fontFamily: 'Inconsolata', fontWeight: '600'}} className='text-[15px]'>Tech Stack:</h1>
-                <div className='flex gap-4 place-self-center text-gray-300 text-[10px] font-[poppins]'>
-                  <p className=''>React</p>
-                  <p className=''>Tailwind</p>
-                  <p className=''>MongoDB</p>
-                  <p className=''>Express</p>
-                </div>
-              </div>
-              <button className='border-2 p-2 mt-4 w-[100px] rounded-full' style={{fontFamily: 'Inconsolata'}}>Visit Site</button>
-            </div>
-            <div className='w-auto h-48 overflow-hidden border rounded p-1 md:w-1/2 md:h-60'>
-              <img src={projectPicture} alt="A Picture of project" className='w-full h-full'/>
-            </div>
-          </div>
+    <section className="bg-white text-black py-20 px-4" id="projects">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-3xl font-bold mb-10" style={{ fontFamily: 'Cascadia Mono' }}>
+          🚀 Projects I’ve Built
+        </h2>
 
-          <div className='p-2 rounded m-2 grid gap-5 md:flex md:m-7'>
-            <div className='w-auto h-48 overflow-hidden border rounded p-1 md:w-1/2 md:h-60'>
-              <img src={projectPicture} alt="A Picture of project" className='w-full h-full'/>
-            </div>
-            <div className='grid gap-2'>
-              <h2 className='text-[20px] font-semibold' style={{fontFamily: 'Dm sans'}}>2. Jambify</h2>
-              <div style={{fontFamily: 'Inconsolata'}} className='tracking-tight leading-tight text-gray-400 text-[15px] max-w-prose border-2 border-blue-700 p-2 my-2 rounded'>Lorem, ipsum dolor sit amet 
-                consectetur adipisicing elit. 
-                Numquam minima vel tempora et sed? 
-                Temporibus libero quod dicta non ratione.
-              </div>
-              <div className='flex gap-2 mt-5 text-center'>
-                <h1 style={{fontFamily: 'Inconsolata', fontWeight: '600'}} className='text-[15px]'>Tech Stack:</h1>
-                <div className='flex gap-4 place-self-center text-gray-300 text-[10px] font-[poppins]'>
-                  <p className=''>React</p>
-                  <p className=''>Tailwind</p>
-                  <p className=''>MongoDB</p>
-                  <p className=''>Express</p>
-                </div>
-              </div>
-              <button className='border-2 p-2 mt-4 w-[100px] rounded-full' style={{fontFamily: 'Inconsolata'}}>Visit Site</button>
-            </div>
-          </div>
-          
-          <div className='p-2 rounded m-2 grid gap-5 md:flex md:m-7'>
-            <div className='grid gap-2'>
-              <h2 className='text-[20px] font-semibold' style={{fontFamily: 'Dm sans'}}>1. Jambify</h2>
-              <div style={{fontFamily: 'Inconsolata'}} className='tracking-tight leading-tight text-gray-400 text-[15px] max-w-prose border-2 border-blue-700 p-2 my-2 rounded'>Lorem, ipsum dolor sit amet 
-                consectetur adipisicing elit. 
-                Numquam minima vel tempora et sed? 
-                Temporibus libero quod dicta non ratione.
-              </div>
-              <div className='flex gap-2 mt-5 text-center'>
-                <h1 style={{fontFamily: 'Inconsolata', fontWeight: '600'}} className='text-[15px]'>Tech Stack:</h1>
-                <div className='flex gap-4 place-self-center text-gray-300 text-[10px] font-[poppins]'>
-                  <p className=''>React</p>
-                  <p className=''>Tailwind</p>
-                  <p className=''>MongoDB</p>
-                  <p className=''>Express</p>
-                </div>
-              </div>
-              <button className='border-2 p-2 mt-4 w-[100px] rounded-full' style={{fontFamily: 'Inconsolata'}}>Visit Site</button>
-            </div>
-            <div className='w-auto h-48 overflow-hidden border rounded p-1 md:w-1/2 md:h-60'>
-              <img src={projectPicture} alt="A Picture of project" className='w-full h-full'/>
-            </div>
-          </div>
-
+        <div className="grid gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} {...project} />
+          ))}
         </div>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default Projects
+export default Projects;

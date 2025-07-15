@@ -1,54 +1,73 @@
-# React + TypeScript + Vite
+# 🧑‍💻 Ayomide Oduoye – Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal developer portfolio! Built to showcase my skills, projects, and experience in frontend and fullstack development.
 
-Currently, two official plugins are available:
+> ✨ Designed with React, Tailwind CSS, Framer Motion, and more.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Live Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🔗 [View Portfolio](https://ayomideoduoye.vercel.app)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Frontend:** React, TypeScript, Tailwind CSS
+- **Animations:** Framer Motion, React Type Animation
+- **Email Service:** EmailJS (secured via `.env`)
+- **Icons:** React Icons
+- **Hosting:** Vercel 
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 📂 Features
+
+- Animated landing sections (navbar, about, projects)
+- Interactive project modals with hover effects
+- Email contact form with:
+  - Framer Motion animation
+  - EmailJS integration
+  - Toast notifications
+  - Loading spinner on submit
+- Mobile responsive layout
+- Developer-friendly codebase
+
+---
+
+## 📧 Contact
+
+Want to collaborate or hire me?
+
+- Email: [ayomidecoder@gmail.com](mailto:ayomidecoder@gmail.com)
+- GitHub: [github.com/Heiscalledayo](https://github.com/Heiscalledayo)
+- X (Twitter): [@Heiscalled_Ayo](https://twitter.com/Heiscalled_Ayo)
+
+---
+
+## 🔐 Environment Variables
+
+To run this project locally, create a `.env` file in the root and add:
+
+```env
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+
+## 🛠️ Getting Started
+
+To run this project locally, follow these steps:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/your-portfolio.git
+
+# 2. Navigate into the project directory
+cd your-portfolio
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the development server
+npm run dev
