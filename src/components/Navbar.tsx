@@ -48,12 +48,13 @@ const Navbar: React.FC = () => {
         </a>
 
         {/* Hire Me Button */}
-        <div
+        <a
+          href="mailto:ayomidecoder@gmail.com"
           className="text-white border-none px-4 py-2 bg-black rounded-full text-[13px] font-bold cursor-pointer"
           style={{ fontFamily: 'Inconsolata' }}
         >
           <h1>Hire Me</h1>
-        </div>
+        </a>
       </div>
     </motion.nav>
   );
