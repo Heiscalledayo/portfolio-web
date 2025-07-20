@@ -72,7 +72,7 @@ const WhoAmI: React.FC = () => {
           {/* CTA button */}
           <div className="flex justify-center mt-6">
             <a
-              href="/resume.pdf"
+              href=""
               download
               className="border border-white px-6 py-2 rounded-full text-sm uppercase font-bold hover:bg-white hover:text-black transition duration-300"
             >
