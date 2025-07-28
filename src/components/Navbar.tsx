@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, easeOut } from 'framer-motion';
 import { FaGithub } from 'react-icons/fa'; 
 
+
 const navVariants = {
   hidden: { x: '-100%', opacity: 0 },
   visible: {
