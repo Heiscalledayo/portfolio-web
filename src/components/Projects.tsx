@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
-import image_1 from '../assets/jambify.png';
+import image_1 from '../assets/jambify.jpg';
 
 const Projects: React.FC = () => {
   const projects = [
