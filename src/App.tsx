@@ -1,7 +1,9 @@
 import About from "./components/About";
 import Contact from "./components/Contact";
+import { Experience } from "./components/Experience";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
+// import TestimonialSection from "./components/Testimonial";
 import WhoAmI from "./components/WhoAmI";
 
 function App() {
@@ -10,7 +12,9 @@ function App() {
       <Navbar/>
       <About/>
       <WhoAmI/>
+      <Experience/>
       <Projects/>
+      {/* <TestimonialSection/> */}
       <Contact/>
     </div>
   )

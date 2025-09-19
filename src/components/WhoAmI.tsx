@@ -1,37 +1,46 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { TypeAnimation } from 'react-type-animation';
-import TechStack from './TechStack';
+import React from "react";
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
+import TechStack from "./TechStack";
+import { useTheme } from "./ThemeContext";
+import { FiCoffee } from "react-icons/fi";
+import { HiOutlineFire, HiOutlineUsers, HiOutlineChartBar } from "react-icons/hi";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6 },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 };
 
 const WhoAmI: React.FC = () => {
+  const { theme } = useTheme();
+
   return (
-    <div className="bg-gradient-to-b from-[#0f0f0f] to-black mt-2 text-white py-20 px-4 ">
-      <div className="grid gap-10 md:grid-cols-2 max-w-6xl mx-auto">
-        {/* About Me */}
+    <section
+      id="about"
+      className={`${
+        theme === "dark" ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
+      } py-20 px-6 transition-colors duration-300`}
+    >
+      <div className="max-w-7xl mx-auto grid gap-16 md:grid-cols-2 items-start">
+        {/* === Left: About Me === */}
         <motion.div
-          variants={fadeUp}
+          // variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h1
-            className="text-2xl text-center border-b-4 border-gray-500 mb-6 mx-10 md:mx-20"
-            style={{ fontFamily: 'Cascadia Mono' }}
+          <h2
+            className="text-4xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500"
+            style={{ fontFamily: "DM Sans" }}
           >
-            About Me
-          </h1>
+            Get To Know Me
+          </h2>
 
-          {/* Typing animation heading */}
-          <div className="text-center mb-4">
+          <div className="mb-6">
             <TypeAnimation
               sequence={[
                 "👋 Hi, I’m Ayomide",
@@ -46,58 +55,80 @@ const WhoAmI: React.FC = () => {
               wrapper="span"
               speed={50}
               repeat={Infinity}
-              className="text-[1rem] md:text-2xl font-semibold"
-              style={{ fontFamily: 'DM Sans' }}
+              className="text-xl md:text-2xl font-medium text-gray-700 dark:text-gray-200"
+              style={{ fontFamily: "Cascadia Mono" }}
             />
           </div>
 
-          {/* Paragraph and bullet points */}
           <p
-            style={{ fontFamily: 'Inconsolata' }}
-            className="text-center text-gray-400 text-[15px] leading-7 tracking-tight max-w-prose mx-auto"
+            className={`text-lg leading-7 max-w-prose ${
+              theme === "dark" ? "text-gray-300" : "text-gray-700"
+            }`}
+            style={{ fontFamily: "DM Sans" }}
           >
-            I’m a passionate fullstack developer who transforms complex problems into scalable, elegant solutions.
-            I build responsive interfaces and efficient APIs using technologies like React, Node.js, Firebase, and MongoDB.
-            I’m always up-to-date with modern trends and best practices to deliver high-quality code.
+            I’m a passionate fullstack developer who transforms complex problems
+            into scalable, elegant solutions. I build responsive interfaces and
+            efficient APIs using technologies like React, Node.js, Firebase, and
+            MongoDB.
           </p>
 
           {/* Highlights */}
-          <ul className="text-sm mt-4 text-left text-gray-400 list-disc list-inside px-6 md:px-10">
-            <li>💻 3+ years building with React, Node.js, and MongoDB</li>
+          <ul
+            className={`grid gap-2 mt-6 ${
+              theme === "dark" ? "text-gray-300" : "text-gray-700"
+            }`}
+            style={{ fontFamily: "DM Sans" }}
+          >
+            <li>💻 5+ years with React, Node.js, and MongoDB</li>
             <li>⚙️ Strong in REST APIs, Firebase, and Tailwind CSS</li>
-            <li>🚀 Experienced with fullstack freelance & team projects</li>
-            <li>🎯 Focused on clean UI and performance-driven apps</li>
+            <li>🚀 Freelance + team fullstack experience</li>
+            <li>🎯 Focused on clean UI & performance-driven apps</li>
           </ul>
 
-          {/* CTA button */}
-          <div className="flex justify-center mt-6">
-            <a
-              href=""
-              download
-              className="border border-white px-6 py-2 rounded-full text-sm uppercase font-bold hover:bg-white hover:text-black transition duration-300"
-            >
-              Download Resume
-            </a>
+          {/* Stats */}
+          <div className="grid grid-cols-2 gap-6 md:flex md:gap-10 mt-10">
+            {[
+              { icon: <HiOutlineFire size={32} />, label: "Projects Completed", value: "20+" },
+              { icon: <FiCoffee size={32} />, label: "Cups of Coffee", value: "30+" },
+              { icon: <HiOutlineUsers size={32} />, label: "Satisfied Clients", value: "15+" },
+              { icon: <HiOutlineChartBar size={32} />, label: "Years Experience", value: "5+" },
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ scale: 1.05 }}
+                className={`flex gap-3 p-4 rounded-xl ${
+                  theme === "dark"
+                    ? "bg-white/5 border border-gray-700"
+                    : "bg-white shadow-sm"
+                }`}
+              >
+                <div className="text-pink-500">{item.icon}</div>
+                <div>
+                  <h3 className="text-xl font-bold">{item.value}</h3>
+                  <p className="text-sm opacity-80">{item.label}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 
-        {/* Tech Stack */}
+        {/* === Right: Tech Stack === */}
         <motion.div
-          variants={fadeUp}
+          // variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h1
-            style={{ fontFamily: 'Inconsolata' }}
-            className="text-2xl text-center mb-6 mx-10 md:mx-20 border-b-4 border-gray-500"
+          <h2
+            className="text-4xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500"
+            style={{ fontFamily: "DM Sans" }}
           >
-            My Tech Stack
-          </h1>
+            Technologies I Use
+          </h2>
           <TechStack />
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

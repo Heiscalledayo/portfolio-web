@@ -2,10 +2,13 @@ import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
 import toast, { Toaster } from 'react-hot-toast';
+import { useTheme } from './ThemeContext';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
+  const { theme } = useTheme();
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,26 +33,37 @@ const Contact: React.FC = () => {
       });
   };
 
+  const inputClasses = `
+    border p-3 rounded-md bg-transparent outline-none transition
+    focus:ring-2 focus:ring-[#ff4c60] focus:border-[#ff4c60]
+    ${theme === 'light' ? 'border-gray-400 text-black' : 'border-gray-300 text-white'}
+  `;
+
   return (
-    <section id="contact" className="bg-white text-black py-15 px-4">
+    <section
+      id="contact"
+      className={`${theme === 'light' ? 'bg-gray-50 text-black' : 'bg-gray-900 text-white'} py-20 px-4`}
+    >
       <Toaster position="top-center" />
 
-      <div className="max-w-xl mx-auto text-center">
+      <div className="max-w-3xl mx-auto text-center">
         <motion.h2
           className="text-3xl font-bold mb-4"
-          style={{ fontFamily: 'Cascadia Mono' }}
+          style={{ fontFamily: 'DM Sans' }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          📬 Let's Get In Touch
+          📬 Let’s Get In Touch
         </motion.h2>
 
         <motion.p
-          className="text-gray-600 mb-8"
+          className={`${theme === 'light' ? 'text-gray-600' : 'text-gray-300'} mb-10 max-w-xl mx-auto`}
           style={{ fontFamily: 'Inconsolata' }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           Got a project or just want to say hi? Fill the form below and I’ll get back to you soon.
@@ -58,41 +72,64 @@ const Contact: React.FC = () => {
         <motion.form
           ref={form}
           onSubmit={sendEmail}
-          className="grid gap-6 text-left"
+          className={`grid gap-6 text-left rounded-2xl p-6 shadow-md border
+            ${theme === 'light' ? 'bg-white border-gray-200' : 'bg-gray-800 border-gray-700'}
+          `}
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <input
+          <motion.input
             type="text"
             name="user_name"
             placeholder="Your Name"
             required
-            className="border p-3 rounded-md"
+            className={inputClasses}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.4 }}
           />
-          <input
+          <motion.input
             type="email"
             name="user_email"
             placeholder="Your Email"
             required
-            className="border p-3 rounded-md"
+            className={inputClasses}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.5 }}
           />
-          <textarea
+          <motion.textarea
             name="message"
             placeholder="Your Message"
             rows={5}
             required
-            className="border p-3 rounded-md"
-          ></textarea>
+            className={inputClasses}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.6 }}
+          ></motion.textarea>
 
-          <button
+          <motion.button
             type="submit"
             disabled={loading}
-            className="bg-black text-white py-3 px-6 rounded-full hover:bg-gray-800 transition flex items-center justify-center"
+            className={`${
+              theme === 'light'
+                ? 'bg-black text-white hover:bg-gray-800'
+                : 'bg-white text-black hover:bg-gray-200'
+            } py-3 px-6 rounded-full transition flex items-center justify-center`}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.7 }}
           >
             {loading ? (
               <svg
-                className="animate-spin h-5 w-5 text-white"
+                className="animate-spin h-5 w-5"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -114,23 +151,38 @@ const Contact: React.FC = () => {
             ) : (
               'Send Message'
             )}
-          </button>
+          </motion.button>
         </motion.form>
 
+        {/* 📧 Direct Email */}
         <motion.p
-          className="text-sm text-gray-500 mt-6"
+          className={`text-sm mt-8 ${theme === 'light' ? 'text-gray-500' : 'text-gray-400'}`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.8 }}
         >
-          Or email me directly at:{' '}
+          Or email me directly at{' '}
           <a
             href="mailto:ayomidecoder@gmail.com"
-            className="text-blue-600 font-semibold"
+            className="text-[#ff4c60] font-semibold"
           >
             ayomidecoder@gmail.com
           </a>
         </motion.p>
+
+        {/* 🌐 Social Links */}
+        <div className="flex justify-center gap-6 mt-6">
+          <a href="https://github.com/yourusername" target="_blank" className="text-2xl hover:text-[#ff4c60] transition">
+            <FaGithub />
+          </a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" className="text-2xl hover:text-[#ff4c60] transition">
+            <FaLinkedin />
+          </a>
+          <a href="https://twitter.com/yourusername" target="_blank" className="text-2xl hover:text-[#ff4c60] transition">
+            <FaTwitter />
+          </a>
+        </div>
       </div>
     </section>
   );
