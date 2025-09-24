@@ -6,14 +6,14 @@ import { useTheme } from "./ThemeContext";
 import { FiCoffee } from "react-icons/fi";
 import { HiOutlineFire, HiOutlineUsers, HiOutlineChartBar } from "react-icons/hi";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
+// const fadeUp = {
+//   hidden: { opacity: 0, y: 40 },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: { duration: 0.6, ease: "easeOut" },
+//   },
+// };
 
 const WhoAmI: React.FC = () => {
   const { theme } = useTheme();

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // Example images
 import jambify from '../assets/jambify.jpg';
 import clientWork from '../assets/jambify.jpg';
+import oluseed from '../assets/Oluseed.jpg'
 
 type Project = {
   title: string;
@@ -33,15 +34,6 @@ const Projects: React.FC = () => {
       link: 'https://jambify.vercel.app',
       tech: ['React', 'Node.js', 'Tailwind'],
     },
-    {
-      title: 'Portfolio Website',
-      description: 'My personal portfolio built from scratch',
-      fullDescription:
-        'This portfolio website showcases my skills, projects, and experience as a fullstack developer.',
-      image: jambify,
-      link: 'https://myportfolio.vercel.app',
-      tech: ['React', 'Framer Motion', 'Tailwind'],
-    },
   ];
 
   const clientProjects: Project[] = [
@@ -55,14 +47,22 @@ const Projects: React.FC = () => {
       tech: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
     },
     {
-      title: 'E-commerce Platform',
-      description: 'Marketplace for artisans',
+      title: 'Olastute',
+      description: 'An inventory management',
       fullDescription:
-        'Built a scalable platform for artisans to showcase their products and connect with customers.',
+        'Built a scalable platform for the client to display inventories, manage stocks and assets',
       image: clientWork,
-      link: 'https://artisanstore.com',
+      link: '',
       tech: ['Next.js', 'Express', 'MongoDB'],
     },
+    {
+      title: 'Oluseed',
+      description: 'A Company Website',
+      fullDescription: 'Built a scalable system for the company',
+      image: oluseed,
+      link: 'https://oluweb.netlify.app/',
+      tech: ["TypeScript", "React", "Tailwind", "Nodejs"]
+    }
   ];
 
   const renderProject = (project: Project) => (

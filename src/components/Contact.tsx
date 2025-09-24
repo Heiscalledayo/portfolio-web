@@ -3,7 +3,7 @@ import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
 import toast, { Toaster } from 'react-hot-toast';
 import { useTheme } from './ThemeContext';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaTwitter } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -173,13 +173,13 @@ const Contact: React.FC = () => {
 
         {/* 🌐 Social Links */}
         <div className="flex justify-center gap-6 mt-6">
-          <a href="https://github.com/yourusername" target="_blank" className="text-2xl hover:text-[#ff4c60] transition">
+          <a href="https://github.com/Heiscalledayo" target="_blank" className="text-2xl hover:text-[#ff4c60] transition">
             <FaGithub />
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" className="text-2xl hover:text-[#ff4c60] transition">
+          {/* <a href="https://linkedin.com/in/yourusername" target="_blank" className="text-2xl hover:text-[#ff4c60] transition">
             <FaLinkedin />
-          </a>
-          <a href="https://twitter.com/yourusername" target="_blank" className="text-2xl hover:text-[#ff4c60] transition">
+          </a> */}
+          <a href="https://twitter.com/Heiscalled_Ayo" target="_blank" className="text-2xl hover:text-[#ff4c60] transition">
             <FaTwitter />
           </a>
         </div>
