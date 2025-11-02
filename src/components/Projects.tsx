@@ -4,8 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // Example images
 import jambify from '../assets/jambify.jpg';
-import clientWork from '../assets/jambify.jpg';
+import olastute from '../assets/olastute.jpg'
 import oluseed from '../assets/Oluseed.jpg'
+import speakAfrica from '../assets/speakafricans.jpg'
 
 type Project = {
   title: string;
@@ -42,16 +43,16 @@ const Projects: React.FC = () => {
       description: 'Learn, Curate, Engage',
       fullDescription:
         'A content platform designed to empower African voices, offering educational resources and curated stories.',
-      image: clientWork,
-      link: 'https://speakafrica.com',
+      image: speakAfrica,
+      link: 'https://speakafricans.com',
       tech: ['React', 'Node.js', 'MongoDB', 'Tailwind'],
     },
     {
       title: 'Olastute',
-      description: 'An inventory management',
+      description: 'An inventory management system',
       fullDescription:
         'Built a scalable platform for the client to display inventories, manage stocks and assets',
-      image: clientWork,
+      image: olastute,
       link: '',
       tech: ['Next.js', 'Express', 'MongoDB'],
     },
